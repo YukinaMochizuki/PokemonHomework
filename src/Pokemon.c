@@ -27,6 +27,14 @@ struct checkStructIsInitialized_data{
 	int *variable_detail;
 };
 
+struct person_finalhomework{
+	char class[64];
+	int studentID;
+	char name[64];
+	char date[64];
+	char phone_number[64];
+};
+
 struct Lowlevel_area_data{
 	char name[30];
 //	是否為初始城鎮
@@ -5153,6 +5161,112 @@ int main(int argc, char *argv[]){
 		}
 		return 0;
 	}
+
+	if(strcmp(argv[1],"final_homework") == 0){
+		char **name_list;
+		char name_num_char[10];
+		char *name_num_char_star = name_num_char;
+		int name_num;
+
+		struct person_finalhomework person_finalhomework;
+
+		pokemonDataSystem("", "", space_int, "", space_charstar2,this_system);
+//		grading_curve_type當作可否升級依據，1為否、2為是
+//		強制進入INITIALIZATION週期
+		operatingStateManageSystem(this_system, get_game_state, eventManageSystem_type);
+//		獲取寶可夢標籤快取
+		pokemonDataSystem("", "", 3, "", space_charstar2, this_system);
+		pokemonDataSystem("", "", 2, name_num_char_star, space_charstar2, this_system);
+		name_list = pokemonDataSystem("", "", 2, "", space_charstar2, this_system);
+		name_num = atoi(name_num_char_star);
+		if(name_num == 0){
+			severity_level = 3;
+			sprintf(logger_message, "There was an error reading the number of name");
+			getLogger(severity_level, this_system, logger_message);
+		}
+
+		severity_level = 0;
+		sprintf(logger_message, "wellcome to play pokemon");
+		getLogger(severity_level, "main", logger_message);
+
+//		以時間為種子宣告亂數種子
+		srand((unsigned)time(NULL));
+		for(;1;){
+//			清空標準輸入
+			fflush(stdin);
+
+			severity_level = 0;
+			sprintf(logger_message,"請輸入選項: ");
+			getLogger(severity_level, "main", logger_message);
+			sprintf(logger_message,"(A). 輸入個人資料");
+			getLogger(severity_level, "main", logger_message);
+			sprintf(logger_message,"(B). 顯示我的Pokemon種類資料");
+			getLogger(severity_level, "main", logger_message);
+			sprintf(logger_message,"(C). 從所有種類中, 找出特殊種類Pokemon");
+			getLogger(severity_level, "main", logger_message);
+			sprintf(logger_message,"(D). 創造Pokemon的怪獸(Monster), 進行進化");
+			getLogger(severity_level, "main", logger_message);
+			sprintf(logger_message,"(E). Exit");
+			getLogger(severity_level, "main", logger_message);
+
+			int input_record_int;
+			int rand_num;
+
+			char input[64];
+			gets(input);
+			if(strcmp(input,"A") == 0){
+
+				severity_level = 0;
+				sprintf(logger_message,"(A). 輸入個人資料");
+				getLogger(severity_level, "main", logger_message);
+
+				sprintf(logger_message,"請輸入你的班級：資工 1.一A 2.一B");
+				getLogger(severity_level, "main", logger_message);
+				scanf("%d",&input_record_int);
+
+				if(input_record_int == 1){
+					sprintf(person_finalhomework.class,"資工一A");
+				}else if(input_record_int == 2){
+					sprintf(person_finalhomework.class,"資工一B");
+				}
+
+				sprintf(logger_message,"請輸入你的姓名");
+				getLogger(severity_level, "main", logger_message);
+				scanf("%s",person_finalhomework.name);
+
+				sprintf(logger_message,"請輸入你的生日");
+				getLogger(severity_level, "main", logger_message);
+				scanf("%s",person_finalhomework.date);
+
+				sprintf(logger_message,"請輸入你的電話");
+				getLogger(severity_level, "main", logger_message);
+				scanf("%s",person_finalhomework.phone_number);
+
+//				準備學號亂數
+				rand_num = rand() % 1000000;
+				person_finalhomework.studentID = rand_num;
+
+				sprintf(logger_message,"以下是您的使用者資料");
+				getLogger(severity_level, "main", logger_message);
+				sprintf(logger_message,"班級：%s",person_finalhomework.class);
+				getLogger(severity_level, "main", logger_message);
+				sprintf(logger_message,"學號：4105%06d",person_finalhomework.studentID);
+				getLogger(severity_level, "main", logger_message);
+				sprintf(logger_message,"姓名：%s",person_finalhomework.name);
+				getLogger(severity_level, "main", logger_message);
+				sprintf(logger_message,"生日：%s",person_finalhomework.date);
+				getLogger(severity_level, "main", logger_message);
+				sprintf(logger_message,"電話：%s",person_finalhomework.phone_number);
+				getLogger(severity_level, "main", logger_message);
+
+				system("PAUSE");
+			}
+		}
+
+
+
+	}
+
 	areaDataSystem("", "", space_int, "", space_charstar2,this_system);
 	operatingStateManageSystem(this_system, get_game_state, eventManageSystem_type);
 	char **test;
