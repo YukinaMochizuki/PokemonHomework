@@ -2466,10 +2466,14 @@ char** pokemonDataSystem(char config_item[64],char config_variable[64],int call_
 
 //	#PRE_INITIALIZATION
 	if(strcmp(get_game_state, "PRE_INITIALIZATION") == 0){
-//			運行狀態中被第一次呼叫
+//		運行狀態中被第一次呼叫
+//		##警告，這邊為了Final作業改了呼叫結構
+		char file_name[60];
 		if(call_record == 0){
-			if(readConfiguration("pokemon_data_system") == -1){
-				if(initializationErrorMessager(this_system, "pokemon_data_system") == -1) return this_system_statue = &system_statue_error;
+			sprintf(file_name,"pokemon_data_system.%s",source_system);
+			if(readConfiguration(file_name) == -1){
+				if(initializationErrorMessager(this_system, "pokemon_data_system") == -1)
+					return this_system_statue = &system_statue_error;
 			}else{
 				return this_system_statue = &system_statue_ok;
 			}
@@ -3246,6 +3250,39 @@ char** pokemonDataSystem(char config_item[64],char config_variable[64],int call_
 						getLogger(severity_level, this_system, logger_message);
 						return Lowlevel_pokemon_data_entity[find_name_num].skills_table;
 					}
+				}else if(strcmp("HP", config_variable) == 0
+						|| strcmp("attack", config_variable) == 0
+						|| strcmp("defense", config_variable) == 0
+						|| strcmp("mana_attack", config_variable) == 0
+						|| strcmp("mana_defense", config_variable) == 0
+						|| strcmp("evasion_rate", config_variable) == 0
+						|| strcmp("speed", config_variable) == 0
+						|| strcmp("luck", config_variable) == 0){
+//					int
+//					##int.記得改回來
+					if(strcmp("HP", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.HP);
+					if(strcmp("attack", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.attack);
+					if(strcmp("defense", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.defense);
+					if(strcmp("mana_attack", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.mana_attack);
+					if(strcmp("mana_defence", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.mana_defense);
+					if(strcmp("evasion_rate", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.evasion_rate);
+					if(strcmp("defense", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.speed);
+					if(strcmp("defense", config_variable) == 0) sprintf(callback_variable, "%d",
+							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.luck);
+
+					severity_level = 1;
+					sprintf(logger_message, "The name:%s variables:%s is be read %s for %s",
+							config_item, config_variable, callback_variable, source_system);
+
+
+
 				}
 			}
 		}else if(call_type == 3){
@@ -4849,12 +4886,23 @@ int readConfiguration(char source_system[60]){
 	char skill_data_system[] = "skill_data_system";
 	char trigger_event_data_system[] = "trigger_event_data_system";
 	FILE *fp;
+
+//	##警告：這裡的strtok是因應作業使用
+
+	strtok(source_system,".");
+
 	if(strcmp(source_system, area_data_system) == 0){
 		fp = fopen("./area_data.txt", "r");
 	}else if(strcmp(source_system, skill_data_system) == 0){
 		fp = fopen("./skill_data.txt", "r");
 	}else if(strcmp(source_system, pokemon_data_system) == 0){
-		fp = fopen("./pokemon_data.txt", "r");
+//		##作業修改警告
+		char *file_name = strtok(NULL, equal_sign);
+		if(strcmp(file_name, "main") == 0){
+			fp = fopen("./pokemon_data.txt", "r");
+		}else{
+			fp = fopen(file_name, "r");
+		}
 	}else if(strcmp(source_system, props_data_system) == 0){
 		fp = fopen("./props_data.txt", "r");
 	}else if(strcmp(source_system, npc_data_system) == 0){
@@ -5163,27 +5211,12 @@ int main(int argc, char *argv[]){
 	}
 
 	if(strcmp(argv[1],"final_homework") == 0){
-		char **name_list;
 		char name_num_char[10];
 		char *name_num_char_star = name_num_char;
 		int name_num;
+		char **name_list;
 
 		struct person_finalhomework person_finalhomework;
-
-		pokemonDataSystem("", "", space_int, "", space_charstar2,this_system);
-//		grading_curve_type當作可否升級依據，1為否、2為是
-//		強制進入INITIALIZATION週期
-		operatingStateManageSystem(this_system, get_game_state, eventManageSystem_type);
-//		獲取寶可夢標籤快取
-		pokemonDataSystem("", "", 3, "", space_charstar2, this_system);
-		pokemonDataSystem("", "", 2, name_num_char_star, space_charstar2, this_system);
-		name_list = pokemonDataSystem("", "", 2, "", space_charstar2, this_system);
-		name_num = atoi(name_num_char_star);
-		if(name_num == 0){
-			severity_level = 3;
-			sprintf(logger_message, "There was an error reading the number of name");
-			getLogger(severity_level, this_system, logger_message);
-		}
 
 		severity_level = 0;
 		sprintf(logger_message, "wellcome to play pokemon");
@@ -5210,11 +5243,14 @@ int main(int argc, char *argv[]){
 			getLogger(severity_level, "main", logger_message);
 
 			int input_record_int;
+			int A_record = 0;
 			int rand_num;
 
 			char input[64];
 			gets(input);
 			if(strcmp(input,"A") == 0){
+//				紀錄A已經被選過了
+				A_record = 1;
 
 				severity_level = 0;
 				sprintf(logger_message,"(A). 輸入個人資料");
@@ -5260,6 +5296,38 @@ int main(int argc, char *argv[]){
 				getLogger(severity_level, "main", logger_message);
 
 				system("PAUSE");
+			}else if(strcmp(input,"B") == 0){
+				char file_name[64];
+
+				if(A_record){
+					sprintf(logger_message,"您必須先選A選項才能繼續");
+					getLogger(severity_level, "main", logger_message);
+					continue;
+				}
+
+				sprintf(logger_message,"請輸入檔案名稱");
+				getLogger(severity_level, "main", logger_message);
+				scanf("%s",file_name);
+
+
+//				##原本的this_system當作寫入檔案的名稱
+				pokemonDataSystem("", "", space_int, "", space_charstar2,file_name);
+//				grading_curve_type當作可否升級依據，1為否、2為是
+//				強制進入INITIALIZATION週期
+				operatingStateManageSystem(this_system, get_game_state, eventManageSystem_type);
+//				獲取寶可夢標籤快取
+				pokemonDataSystem("", "", 3, "", space_charstar2, this_system);
+				pokemonDataSystem("", "", 2, name_num_char_star, space_charstar2, this_system);
+				name_list = pokemonDataSystem("", "", 2, "", space_charstar2, this_system);
+				name_num = atoi(name_num_char_star);
+				if(name_num == 0){
+					severity_level = 3;
+					sprintf(logger_message, "There was an error reading the number of name");
+					getLogger(severity_level, this_system, logger_message);
+				}
+
+
+
 			}
 		}
 
