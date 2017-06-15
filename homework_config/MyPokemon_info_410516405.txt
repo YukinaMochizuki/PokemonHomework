@@ -1,4 +1,4 @@
-number_of_reading=20
+ï»¿number_of_reading=20
 
 name=Abomasnow
 base_ability_value=HP 90
@@ -7,19 +7,19 @@ base_ability_value=defense 75
 base_ability_value=mana_attack 92
 base_ability_value=mana_defense 85
 base_ability_value=speed 60
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 494
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Snow Warning
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Snover
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=Abra
@@ -29,19 +29,19 @@ base_ability_value=defense 15
 base_ability_value=mana_attack 105
 base_ability_value=mana_defense 55
 base_ability_value=speed 90
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 310
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=4
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Synchronize
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=None
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=Kadabra
 //---
 name=Absol
@@ -51,19 +51,19 @@ base_ability_value=defense 60
 base_ability_value=mana_attack 75
 base_ability_value=mana_defense 60
 base_ability_value=speed 75
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 465
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Pressure
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=None
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=Chingling
@@ -73,19 +73,19 @@ base_ability_value=defense 50
 base_ability_value=mana_attack 65
 base_ability_value=mana_defense 50
 base_ability_value=speed 45
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 285
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=5
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Levitate
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=None
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=Chimeco
 //---
 name=Claydol
@@ -95,19 +95,19 @@ base_ability_value=defense 105
 base_ability_value=mana_attack 70
 base_ability_value=mana_defense 120
 base_ability_value=speed 75
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 500
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Levitate
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Baltoy
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=Clefable
@@ -117,19 +117,19 @@ base_ability_value=defense 73
 base_ability_value=mana_attack 85
 base_ability_value=mana_defense 90
 base_ability_value=speed 60
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 473
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Cute Charm
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Clefairy
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=Clefairy
@@ -139,19 +139,19 @@ base_ability_value=defense 48
 base_ability_value=mana_attack 60
 base_ability_value=mana_defense 65
 base_ability_value=speed 35
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 323
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=1
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Cute Charm
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Cleffa
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=Clefable
 //---
 name=Elekid
@@ -161,19 +161,19 @@ base_ability_value=defense 37
 base_ability_value=mana_attack 65
 base_ability_value=mana_defense 55
 base_ability_value=speed 95
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 360
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=2
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Static
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=None
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=Electabuzz
 //---
 name=Luxio
@@ -183,19 +183,19 @@ base_ability_value=defense 49
 base_ability_value=mana_attack 60
 base_ability_value=mana_defense 49
 base_ability_value=speed 60
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 363
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=4
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Rivalry
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Shinx
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=Luxray
 //---
 name=Marill
@@ -205,19 +205,19 @@ base_ability_value=defense 50
 base_ability_value=mana_attack 20
 base_ability_value=mana_defense 50
 base_ability_value=speed 40
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 250
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=3
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Thick Fat
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Azurill
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=Azumarill
 //---
 name=Marowak
@@ -227,19 +227,19 @@ base_ability_value=defense 110
 base_ability_value=mana_attack 50
 base_ability_value=mana_defense 80
 base_ability_value=speed 45
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 425
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Rock Head
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Cubone
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=Marshtomp
@@ -249,19 +249,19 @@ base_ability_value=defense 70
 base_ability_value=mana_attack 60
 base_ability_value=mana_defense 70
 base_ability_value=speed 50
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 405
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=4
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Torrent
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Mudkip
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=Swampert
 //---
 name=Masquerain
@@ -271,19 +271,19 @@ base_ability_value=defense 62
 base_ability_value=mana_attack 80
 base_ability_value=mana_defense 82
 base_ability_value=speed 60
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 414
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Intimidate
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Surskit
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=Vaporeon
@@ -293,19 +293,19 @@ base_ability_value=defense 60
 base_ability_value=mana_attack 110
 base_ability_value=mana_defense 95
 base_ability_value=speed 65
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 525
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Water Absorb
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Eevee
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=Venomoth
@@ -315,19 +315,19 @@ base_ability_value=defense 60
 base_ability_value=mana_attack 90
 base_ability_value=mana_defense 75
 base_ability_value=speed 90
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 450
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=Shield Dust
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=Venonat
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=None
 //---
 name=
@@ -338,18 +338,18 @@ base_ability_value=mana_attack
 base_ability_value=mana_defense 
 base_ability_value=evasion_rate 
 base_ability_value=speed 
-//—p˜Ò‘ã‘ÖTotal
+//ç”¨ä¾†ä»£æ›¿Total
 base_ability_value=luck 
 
-//—p˜Ò‘Ö‘ãi‰»ŠùÉ—Ê
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–æ‰€éœ€æ•¸é‡
 grading_curve_type=
 
-//—p˜Ò‘Ö‘ãi‰»˜ÒŒ¹Ai‰»–Ú•W‹y›¢«–¼âi
+//ç”¨ä¾†æ›¿ä»£é€²åŒ–ä¾†æºã€é€²åŒ–ç›®æ¨™åŠå±¬æ€§åç¨±
 attributes_num=3
-//›¢«–¼âi
+//å±¬æ€§åç¨±
 attributes_type=
-//i‰»˜ÒŒ¹
+//é€²åŒ–ä¾†æº
 attributes_type=
-//i‰»–Ú•W
+//é€²åŒ–ç›®æ¨™
 attributes_type=
 //---
