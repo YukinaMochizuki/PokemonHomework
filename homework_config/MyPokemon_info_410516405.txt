@@ -1,0 +1,355 @@
+number_of_reading=20
+
+name=Abomasnow
+base_ability_value=HP 90
+base_ability_value=attack 92
+base_ability_value=defense 75
+base_ability_value=mana_attack 92
+base_ability_value=mana_defense 85
+base_ability_value=speed 60
+//用來代替Total
+base_ability_value=luck 494
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Snow Warning
+//進化來源
+attributes_type=Snover
+//進化目標
+attributes_type=None
+//---
+name=Abra
+base_ability_value=HP 25
+base_ability_value=attack 20
+base_ability_value=defense 15
+base_ability_value=mana_attack 105
+base_ability_value=mana_defense 55
+base_ability_value=speed 90
+//用來代替Total
+base_ability_value=luck 310
+
+//用來替代進化所需數量
+grading_curve_type=4
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Synchronize
+//進化來源
+attributes_type=None
+//進化目標
+attributes_type=Kadabra
+//---
+name=Absol
+base_ability_value=HP 65
+base_ability_value=attack 130
+base_ability_value=defense 60
+base_ability_value=mana_attack 75
+base_ability_value=mana_defense 60
+base_ability_value=speed 75
+//用來代替Total
+base_ability_value=luck 465
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Pressure
+//進化來源
+attributes_type=None
+//進化目標
+attributes_type=None
+//---
+name=Chingling
+base_ability_value=HP 45
+base_ability_value=attack 30
+base_ability_value=defense 50
+base_ability_value=mana_attack 65
+base_ability_value=mana_defense 50
+base_ability_value=speed 45
+//用來代替Total
+base_ability_value=luck 285
+
+//用來替代進化所需數量
+grading_curve_type=5
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Levitate
+//進化來源
+attributes_type=None
+//進化目標
+attributes_type=Chimeco
+//---
+name=Claydol
+base_ability_value=HP 60
+base_ability_value=attack 70
+base_ability_value=defense 105
+base_ability_value=mana_attack 70
+base_ability_value=mana_defense 120
+base_ability_value=speed 75
+//用來代替Total
+base_ability_value=luck 500
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Levitate
+//進化來源
+attributes_type=Baltoy
+//進化目標
+attributes_type=None
+//---
+name=Clefable
+base_ability_value=HP 95
+base_ability_value=attack 70
+base_ability_value=defense 73
+base_ability_value=mana_attack 85
+base_ability_value=mana_defense 90
+base_ability_value=speed 60
+//用來代替Total
+base_ability_value=luck 473
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Cute Charm
+//進化來源
+attributes_type=Clefairy
+//進化目標
+attributes_type=None
+//---
+name=Clefairy
+base_ability_value=HP 70
+base_ability_value=attack 45
+base_ability_value=defense 48
+base_ability_value=mana_attack 60
+base_ability_value=mana_defense 65
+base_ability_value=speed 35
+//用來代替Total
+base_ability_value=luck 323
+
+//用來替代進化所需數量
+grading_curve_type=1
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Cute Charm
+//進化來源
+attributes_type=Cleffa
+//進化目標
+attributes_type=Clefable
+//---
+name=Elekid
+base_ability_value=HP 45
+base_ability_value=attack 63
+base_ability_value=defense 37
+base_ability_value=mana_attack 65
+base_ability_value=mana_defense 55
+base_ability_value=speed 95
+//用來代替Total
+base_ability_value=luck 360
+
+//用來替代進化所需數量
+grading_curve_type=2
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Static
+//進化來源
+attributes_type=None
+//進化目標
+attributes_type=Electabuzz
+//---
+name=Luxio
+base_ability_value=HP 60
+base_ability_value=attack 85
+base_ability_value=defense 49
+base_ability_value=mana_attack 60
+base_ability_value=mana_defense 49
+base_ability_value=speed 60
+//用來代替Total
+base_ability_value=luck 363
+
+//用來替代進化所需數量
+grading_curve_type=4
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Rivalry
+//進化來源
+attributes_type=Shinx
+//進化目標
+attributes_type=Luxray
+//---
+name=Marill
+base_ability_value=HP 70
+base_ability_value=attack 20
+base_ability_value=defense 50
+base_ability_value=mana_attack 20
+base_ability_value=mana_defense 50
+base_ability_value=speed 40
+//用來代替Total
+base_ability_value=luck 250
+
+//用來替代進化所需數量
+grading_curve_type=3
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Thick Fat
+//進化來源
+attributes_type=Azurill
+//進化目標
+attributes_type=Azumarill
+//---
+name=Marowak
+base_ability_value=HP 60
+base_ability_value=attack 80
+base_ability_value=defense 110
+base_ability_value=mana_attack 50
+base_ability_value=mana_defense 80
+base_ability_value=speed 45
+//用來代替Total
+base_ability_value=luck 425
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Rock Head
+//進化來源
+attributes_type=Cubone
+//進化目標
+attributes_type=None
+//---
+name=Marshtomp
+base_ability_value=HP 70
+base_ability_value=attack 85
+base_ability_value=defense 70
+base_ability_value=mana_attack 60
+base_ability_value=mana_defense 70
+base_ability_value=speed 50
+//用來代替Total
+base_ability_value=luck 405
+
+//用來替代進化所需數量
+grading_curve_type=4
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Torrent
+//進化來源
+attributes_type=Mudkip
+//進化目標
+attributes_type=Swampert
+//---
+name=Masquerain
+base_ability_value=HP 70
+base_ability_value=attack 60
+base_ability_value=defense 62
+base_ability_value=mana_attack 80
+base_ability_value=mana_defense 82
+base_ability_value=speed 60
+//用來代替Total
+base_ability_value=luck 414
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Intimidate
+//進化來源
+attributes_type=Surskit
+//進化目標
+attributes_type=None
+//---
+name=Vaporeon
+base_ability_value=HP 130
+base_ability_value=attack 65
+base_ability_value=defense 60
+base_ability_value=mana_attack 110
+base_ability_value=mana_defense 95
+base_ability_value=speed 65
+//用來代替Total
+base_ability_value=luck 525
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Water Absorb
+//進化來源
+attributes_type=Eevee
+//進化目標
+attributes_type=None
+//---
+name=Venomoth
+base_ability_value=HP 70
+base_ability_value=attack 65
+base_ability_value=defense 60
+base_ability_value=mana_attack 90
+base_ability_value=mana_defense 75
+base_ability_value=speed 90
+//用來代替Total
+base_ability_value=luck 450
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=Shield Dust
+//進化來源
+attributes_type=Venonat
+//進化目標
+attributes_type=None
+//---
+name=
+base_ability_value=HP 
+base_ability_value=attack 
+base_ability_value=defense 
+base_ability_value=mana_attack 
+base_ability_value=mana_defense 
+base_ability_value=evasion_rate 
+base_ability_value=speed 
+//用來代替Total
+base_ability_value=luck 
+
+//用來替代進化所需數量
+grading_curve_type=
+
+//用來替代進化來源、進化目標及屬性名稱
+attributes_num=3
+//屬性名稱
+attributes_type=
+//進化來源
+attributes_type=
+//進化目標
+attributes_type=
+//---

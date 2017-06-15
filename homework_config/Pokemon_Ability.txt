@@ -1,0 +1,124 @@
+Ability		Description
+Adaptibility	User's STAB modifier becomes x2.
+Aftermath	Deals 25% damage when KOed by a contact move.
+Air Lock	Blocks the effects of weather.
+Anger Point	Raises Atk to +6 if struck by a Critical Hit.
+Anticipation	Alerts the Pokemon of certain dangerous moves.
+Arena Trap	Prevents switching and increases encounter rate.
+Bad Dreams	Deals 12.5% damage to Sleeping opponents.
+Battle Armor	Prevents Critical Hits.
+Blaze		Boosts power of Fire moves 50% when at 1/3 HP or less.
+Chlorophyll	Speed doubles in Sun.
+Clear Body	Stops the enemy from lowering this Pokemon's stats.
+Cloud Nine	Blocks the effects of weather.
+Color Change	Changes users type to type of last attack that hit this Pokemon.
+Compoundeyes	Increases this Pokemon's Accuracy by 30% and increases the chance of finding items on wild Pokemon.
+Cute Charm	Can infatuate Pokemon of opposite gender when struck. Higher chance of encountering Pokemon of the opposite gender.
+Damp		Prevents the use of Selfdestruct or Explosion.
+Download	User gets a stat boost depending on its opponent's stats.
+Drizzle		Summons permanent Rain.
+Drought		Summons permanent Sun.
+Dry Skin	User absorbs Water and has a weakness to Fire. Heals in Rain and is damaged by Sun.
+Early Bird	Reduces Sleep time by 50%.
+Effect Spore	Induces Paralysis, Poison, or Sleep when struck.
+Filter		Reduces damage from super effective hits by 1/4.
+Flame Body	Enemies' contact moves have a 30% chance to Burn them. Halves the amount of steps required to hatch eggs.
+Flash Fire	Grants immunity to Fire and increases Fire's power 50% when hit by a Fire move.
+Flower Gift	Raises stats of this Pokemon and its partner in sun.
+Forecast	Changes type according to weather.
+Forewarn	Tells what move has the highest base power.
+Frisk		Shows the foe's item.
+Gluttony	Consumes pinch berries at 50% HP or less.
+Guts		Attack is increased 50% when statused.
+Heatproof	Reduces Fire damage 50%.
+Honey Gather	Adds a chance of finding Honey after each in-game battle.
+Huge Power	Doubles Attack stat.
+Hustle		Physical moves do 50% more damage at the cost of 20% Accuracy. Increases wild encounter rate with higher level Pokemon.
+Hydration	Heals status effects in rain.
+Hyper Cutter	Prevents the enemy from lowering this Pokemon's Attack.
+Ice Body	Heals 1/16 max HP in Hail.
+Illuminate	Increases wild encounter rate (no effect in battles).
+Immunity	This Pokemon cannot be Poisoned.
+Inner Focus	Prevents flinching.
+Insomnia	Prevents Sleep.
+Intimidate	Lowers the foe's Attack 1 stage. Decreases wild encounter rate.
+Iron Fist	Increases the power of punching moves.
+Keen Eye	Pokemon's Accuracy cannot be lowered.
+Klutz		This Pokemon both is unaffected by and will not utilize held items.
+Leaf Guard	Prevents status effects in Sun.
+Levitate	This Pokemon is immune to Ground moves.
+Lightningrod	All Electric attacks hit this Pokemon.
+Limber		Blocks Paralysis.
+Liquid Ooze	Leeching moves cause the enemy to lose HP instead.
+Magic Guard	Prevents indirect damage.
+Magma Armor	Cannot be Frozen. Halves the amount of steps required to hatch eggs.
+Magnet Pull	Prevents Steel Pokemon from switching. Increases the chance of encountering a Steel Pokemon in the wild.
+Marvel Scale	Boosts Defense 50% when statused.
+Minus		If allied with a Pokemon with Plus, its Special Attack increases 50%.
+Mold Breaker	Abilities that hinder attacks are nullified.
+Motor Drive	When hit with an Electric move, Speed is boosted 1 stage.
+Multitype	Type changes depending on the held plate. Also prevents item loss.
+Natural Cure	Cures status on switching out.
+No Guard	All attacks used by and used on this Pokemon will never miss.
+Normalize	All attacks used by this Pokemon are Normal type.
+Oblivious	Grants immunity to infatuation and Captivate.
+Overgrow	Raises the power of Grass moves 50% when at 1/3 HP or less.
+Own Tempo	Cannot be confused.
+Pickup		Adds a chance of finding an item after each in-game battle.
+Plus		If allied with a Pokemon with Minus, its Special Attack increases 50%.
+Poison Heal	Heals 1/8 HP per turn when Poisoned.
+Poison Point	Enemies' contact moves have a 30% chance of Poisoning them.
+Pressure	Enemy attacks lose 1 extra PP. Increases wild encounter rate.
+Pure Power	Doubles Attack stat.
+Quick Feet	Increases Speed by 50% when statused.
+Rain Dish	Heals 1/16 max HP in Rain.
+Reckless	Increases the power of recoil moves by 20%.
+Rivalry		Move power depends on gender of the opponent.
+Rock Head	Recoil moves have no recoil.
+Rough Skin	Damages enemies using contact moves 12.5%.
+Run Away	Increases chances of successfully escaping a random battle.
+Sand Stream	Summons permanent Sandstorm. Decreases wild encounter rate when in a sandstorm.
+Sand Veil	Evasion increases by 20% in a Sandstorm.
+Scrappy		Can hit Ghost types with Normal and Fighting moves.
+Serene Grace	This Pokemon's secondary effect chances are doubled.
+Shadow Tag	Prevents switching.
+Shed Skin	30% chance to heal status.
+Shell Armor	Prevents Critical Hits.
+Shield Dust	Secondary effects won't occur.
+Simple		Doubles the effect of status boosts and drops.
+Skill Link	Multi-hit move will always hit for the maximum amount.
+Slow Start	Attack and Speed are halved for 5 turns.
+Sniper		Critical Hits do 3x damage instead of 2x.
+Snow Cloak	Evasion increases 20% in Hail.
+Snow Warning	Summons permanent Hail.
+Solar Power	Loses HP in Sun. Special Attack increases 50%.
+Solid Rock	Reduces damage from super effective hits by 1/4.
+Soundproof	Unaffected by sound moves.
+Speed Boost	Speed raises at end of turn.
+Stall		This Pokemon moves last.
+Static		Enemies' contact moves can Paralyze them.
+Steadfast	Speed is boosted one stage when flinched.
+Stench		Decreases wild encounter rate.
+Sticky Hold	This Pokemon's item cannot be removed. Increases chance of encountering Pokemon while fishing.
+Storm Drain	All Water attacks hit this Pokemon.
+Sturdy		OHKO moves will fail.
+Suction Cups	Cannot be forced to switch. Increases chance of encountering Pokemon while fishing.
+Super Luck	Critical Hit rate increases one stage.
+Swarm		Boosts power of Bug moves 50% when at 1/3 HP or less.
+Swift Swim	Speed doubles in Rain.
+Synchronize	When statused, the enemy is also statused. Can pass nature to wild Pokemon.
+Tangled Feet	Evasion increases when confused.
+Technician	Moves with 60 base power or less do 50% more damage.
+Thick Fat	Halves Ice and Fire damage.
+Tinted Lens	Doubles damage on resisted hits.
+Torrent		Boosts power of Water moves 50% when at 1/3 HP or less.
+Trace		Copies foe's Ability.
+Truant		This Pokemon does nothing every other turn.
+Unaware		Ignores stat boosts on all Pokemon.
+Unburden	Speed increases when an item is used or lost.
+Vital Spirit	Prevents Sleep. Increases wild encounters with higher level Pokemon.
+Volt Absorb	Heals 25% HP when hit by an Electric attack.
+Water Absorb	Heals 25% HP when hit by a Water attack.
+Water Veil	Prevents Burn.
+White Smoke	Prevents the enemy from lowering this Pokemon's stats and decreases wild encounter rate.
+Wonder Guard	Only super effective attacks harm this Pokemon.
