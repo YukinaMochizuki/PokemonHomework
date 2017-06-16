@@ -3274,7 +3274,7 @@ char** pokemonDataSystem(char config_item[64],char config_variable[64],int call_
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.evasion_rate);
 					if(strcmp("defense", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.speed);
-					if(strcmp("defense", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("luck", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.luck);
 
 					severity_level = 1;
@@ -5244,11 +5244,19 @@ int main(int argc, char *argv[]){
 
 			int input_record_int;
 			int A_record = 0;
+			int B_record = 0;
 			int rand_num;
 
 			char input[64];
 			gets(input);
 			if(strcmp(input,"A") == 0){
+				if(A_record){
+					severity_level = 2;
+					sprintf(logger_message,"A選項已經被執行過了!");
+					getLogger(severity_level, "main", logger_message);
+					continue;
+				}
+
 //				紀錄A已經被選過了
 				A_record = 1;
 
@@ -5298,19 +5306,30 @@ int main(int argc, char *argv[]){
 				system("PAUSE");
 			}else if(strcmp(input,"B") == 0){
 				char file_name[64];
+//							   = "./MyPokemon_info_410516405.txt";
 
-				if(A_record){
-					sprintf(logger_message,"您必須先選A選項才能繼續");
+//				因應作業要求設定必須先選A選項才能繼續
+//				if(A_record){
+//					sprintf(logger_message,"您必須先選A選項才能繼續");
+//					getLogger(severity_level, "main", logger_message);
+//					continue;
+//				}
+
+				if(B_record){
+					severity_level = 2;
+					sprintf(logger_message,"A選項已經被執行過了!");
 					getLogger(severity_level, "main", logger_message);
 					continue;
 				}
+
+				B_record = 1;
 
 				sprintf(logger_message,"請輸入檔案名稱");
 				getLogger(severity_level, "main", logger_message);
 				scanf("%s",file_name);
 
 
-//				##原本的this_system當作寫入檔案的名稱
+//				##原本的this_system被當作寫入檔案的名稱
 				pokemonDataSystem("", "", space_int, "", space_charstar2,file_name);
 //				grading_curve_type當作可否升級依據，1為否、2為是
 //				強制進入INITIALIZATION週期
@@ -5326,7 +5345,30 @@ int main(int argc, char *argv[]){
 					getLogger(severity_level, this_system, logger_message);
 				}
 
+				severity_level = 0;
+				sprintf(logger_message, "以下是寶可夢名稱和Total");
+				getLogger(severity_level, this_system, logger_message);
 
+				for(int m = 0;m <= name_num;m++){
+					char luck_record[10];
+					char *luck_record_star = luck_record;
+					static int run_record = 0;
+
+					pokemonDataSystem(name_list[m], "luck", 0,
+							luck_record_star, space_charstar2, this_system);
+
+					printf("%s(%s)　",name_list[m],luck_record);
+					fflush(stdout);
+
+					run_record++;
+					if((run_record % 4) == 0){
+						printf("\n");
+						fflush(stdout);
+					}
+				}
+				printf("\n");
+				fflush(stdout);
+			}else if(strcmp(input,"C") == 0){
 
 			}
 		}

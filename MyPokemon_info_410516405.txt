@@ -1,4 +1,5 @@
-﻿number of loadings=20
+﻿
+number of loadings=20
 
 name=Abomasnow
 base_ability_value=HP 90
@@ -329,27 +330,4 @@ attributes_type=Shield Dust
 attributes_type=Venonat
 //進化目標
 attributes_type=None
-//---
-name=
-base_ability_value=HP 
-base_ability_value=attack 
-base_ability_value=defense 
-base_ability_value=mana_attack 
-base_ability_value=mana_defense 
-base_ability_value=evasion_rate 
-base_ability_value=speed 
-//用來代替Total
-base_ability_value=luck 
-
-//用來替代進化所需數量
-grading_curve_type=
-
-//用來替代進化來源、進化目標及屬性名稱
-attributes_num=3
-//屬性名稱
-attributes_type=
-//進化來源
-attributes_type=
-//進化目標
-attributes_type=
 //---
