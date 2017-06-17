@@ -3250,31 +3250,31 @@ char** pokemonDataSystem(char config_item[64],char config_variable[64],int call_
 						getLogger(severity_level, this_system, logger_message);
 						return Lowlevel_pokemon_data_entity[find_name_num].skills_table;
 					}
-				}else if(strcmp("HP", config_variable) == 0
-						|| strcmp("attack", config_variable) == 0
-						|| strcmp("defense", config_variable) == 0
-						|| strcmp("mana_attack", config_variable) == 0
-						|| strcmp("mana_defense", config_variable) == 0
-						|| strcmp("evasion_rate", config_variable) == 0
-						|| strcmp("speed", config_variable) == 0
-						|| strcmp("luck", config_variable) == 0){
+				}else if(strcmp("B.HP", config_variable) == 0
+						|| strcmp("B.attack", config_variable) == 0
+						|| strcmp("B.defense", config_variable) == 0
+						|| strcmp("B.mana_attack", config_variable) == 0
+						|| strcmp("B.mana_defense", config_variable) == 0
+						|| strcmp("B.evasion_rate", config_variable) == 0
+						|| strcmp("B.speed", config_variable) == 0
+						|| strcmp("B.luck", config_variable) == 0){
 //					int
 //					##int.記得改回來
-					if(strcmp("HP", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.HP", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.HP);
-					if(strcmp("attack", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.attack", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.attack);
-					if(strcmp("defense", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.defense", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.defense);
-					if(strcmp("mana_attack", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.mana_attack", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.mana_attack);
-					if(strcmp("mana_defence", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.mana_defence", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.mana_defense);
-					if(strcmp("evasion_rate", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.evasion_rate", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.evasion_rate);
-					if(strcmp("defense", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.defense", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.speed);
-					if(strcmp("luck", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.luck", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.luck);
 
 					severity_level = 1;
@@ -5326,8 +5326,8 @@ int main(int argc, char *argv[]){
 
 				sprintf(logger_message,"請輸入檔案名稱");
 				getLogger(severity_level, "main", logger_message);
-				scanf("%s",file_name);
-
+//				scanf("%s",file_name);
+				sprintf(file_name,"MyPokemon_info_410516405.txt");
 
 //				##原本的this_system被當作寫入檔案的名稱
 				pokemonDataSystem("", "", space_int, "", space_charstar2,file_name);
@@ -5354,7 +5354,7 @@ int main(int argc, char *argv[]){
 					char *luck_record_star = luck_record;
 					static int run_record = 0;
 
-					pokemonDataSystem(name_list[m], "luck", 0,
+					pokemonDataSystem(name_list[m], "B.luck", 0,
 							luck_record_star, space_charstar2, this_system);
 
 					printf("%s(%s)　",name_list[m],luck_record);
@@ -5369,6 +5369,60 @@ int main(int argc, char *argv[]){
 				printf("\n");
 				fflush(stdout);
 			}else if(strcmp(input,"C") == 0){
+				int MaxHP,minHP;
+				int pokemonID_recordA,pokemonID_recordB,pokemonID_recordC;
+
+				severity_level = 0;
+				sprintf(logger_message,"找出最大HP和最小HP的Pokemon");
+				getLogger(severity_level, "main", logger_message);
+
+				for(int m = 0;m <= name_num;m++){
+					char pokemonHP[10];
+					char *pokemonHP_star = pokemonHP;
+					int pokemonHP_int;
+
+					if(m == 0){
+						pokemonDataSystem(name_list[m], "B.HP", 0,pokemonHP_star, space_charstar2, this_system);
+						MaxHP = atoi(pokemonHP);
+						minHP = atoi(pokemonHP);
+						severity_level = 0;
+						sprintf(logger_message,"Pokemon %s的HP %d，是初始比較數值",name_list[m],
+								MaxHP);
+						getLogger(severity_level, "main", logger_message);
+						continue;
+					}
+					pokemonDataSystem(name_list[m], "B.HP", 0,pokemonHP_star, space_charstar2, this_system);
+					pokemonHP_int = atoi(pokemonHP);
+
+					if(pokemonHP_int > MaxHP){
+						severity_level = 0;
+						sprintf(logger_message,"Pokemon %s的HP %d，比原本最高數值%d還要高，代換MaxHP",name_list[m],
+								pokemonHP_int,MaxHP);
+						getLogger(severity_level, "main", logger_message);
+
+						MaxHP = pokemonHP_int;
+						pokemonID_recordA = m;
+					}
+					if(pokemonHP_int < minHP){
+						severity_level = 0;
+						sprintf(logger_message,"Pokemon %s的HP %d，比原本最低數值%d還要低，代換minHP",name_list[m],
+								pokemonHP_int,MaxHP);
+						getLogger(severity_level, "main", logger_message);
+
+						minHP = pokemonHP_int;
+						pokemonID_recordB = m;
+					}
+
+				}
+
+				severity_level = 0;
+				sprintf(logger_message,"最大HP的Pokemon是%s，他的HP有%d",name_list[pokemonID_recordA],MaxHP);
+				getLogger(severity_level, "main", logger_message);
+
+				severity_level = 0;
+				sprintf(logger_message,"最小HP的Pokemon是%s，他的HP有%d",name_list[pokemonID_recordB],minHP);
+				getLogger(severity_level, "main", logger_message);
+
 
 			}
 		}
