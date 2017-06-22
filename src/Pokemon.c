@@ -3272,11 +3272,11 @@ char** pokemonDataSystem(char config_item[64],char config_variable[64],int call_
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.defense);
 					if(strcmp("B.mana_attack", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.mana_attack);
-					if(strcmp("B.mana_defence", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.mana_defense", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.mana_defense);
 					if(strcmp("B.evasion_rate", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.evasion_rate);
-					if(strcmp("B.defense", config_variable) == 0) sprintf(callback_variable, "%d",
+					if(strcmp("B.speed", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.speed);
 					if(strcmp("B.luck", config_variable) == 0) sprintf(callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].base_ability_value.luck);
@@ -5220,6 +5220,11 @@ int main(int argc, char *argv[]){
 		int name_num;
 		char **name_list;
 
+		int A_record = 0;
+		int B_record = 0;
+		int C_record = 0;
+		int D_record = 0;
+
 		struct person_finalhomework person_finalhomework;
 
 		severity_level = 0;
@@ -5247,8 +5252,6 @@ int main(int argc, char *argv[]){
 			getLogger(severity_level, "main", logger_message);
 
 			int input_record_int;
-			int A_record = 0;
-			int B_record = 0;
 			int rand_num;
 
 			char input[64];
@@ -5313,7 +5316,7 @@ int main(int argc, char *argv[]){
 //							   = "./MyPokemon_info_410516405.txt";
 
 //				因應作業要求設定必須先選A選項才能繼續
-//				if(A_record){
+//				if(A_record != 1){
 //					sprintf(logger_message,"您必須先選A選項才能繼續");
 //					getLogger(severity_level, "main", logger_message);
 //					continue;
@@ -5321,7 +5324,7 @@ int main(int argc, char *argv[]){
 
 				if(B_record){
 					severity_level = 2;
-					sprintf(logger_message,"A選項已經被執行過了!");
+					sprintf(logger_message,"B選項已經被執行過了!");
 					getLogger(severity_level, "main", logger_message);
 					continue;
 				}
@@ -5376,6 +5379,21 @@ int main(int argc, char *argv[]){
 				int MaxHP,minHP;
 				int pokemonID_recordA,pokemonID_recordB;
 
+				if(B_record != 1){
+					sprintf(logger_message, "您必須先選B選項才能繼續");
+					getLogger(severity_level, "main", logger_message);
+					continue;
+				}
+
+				if(C_record){
+					severity_level = 2;
+					sprintf(logger_message,"C選項已經被執行過了!");
+					getLogger(severity_level, "main", logger_message);
+					continue;
+				}
+
+				C_record = 1;
+
 				severity_level = 0;
 				sprintf(logger_message,"找出最大HP和最小HP的Pokemon");
 				getLogger(severity_level, "main", logger_message);
@@ -5411,7 +5429,7 @@ int main(int argc, char *argv[]){
 					if(pokemonHP_int < minHP){
 						severity_level = 1;
 						sprintf(logger_message,"Pokemon %s的HP %d，比原本最低數值%d還要低，代換minHP",name_list[m],
-								pokemonHP_int,MaxHP);
+								pokemonHP_int,minHP);
 						getLogger(severity_level, "main", logger_message);
 
 						minHP = pokemonHP_int;
@@ -5486,7 +5504,9 @@ int main(int argc, char *argv[]){
 				sprintf(logger_message,"debug_list");
 				getLogger(severity_level, "main", logger_message);
 				for(int m = 0;m <= name_num;m++){
+					printf("%s ",name_list_temp[m]);
 					printf("%d ",ATK_list_int[m]);
+					if(((m+1) % 4 )== 0)printf("\n");
 					fflush(stdout);
 				}
 				printf("\n");
@@ -5497,7 +5517,7 @@ int main(int argc, char *argv[]){
 
 				for(int m = 0;m < 5;m++){
 					int run_record = name_num - m;
-					printf("%s(%d)",name_list_temp[run_record],ATK_list_int[run_record]);
+					printf("%s(%d) ",name_list_temp[run_record],ATK_list_int[run_record]);
 				}
 				printf("\n");
 
@@ -5505,14 +5525,10 @@ int main(int argc, char *argv[]){
 //				排序防禦力的最後五名
 //				為避免不可預測的錯誤不分配記憶體重複使用ATK_list
 //				將防禦力資料暫存
-				for(int m = 0; m <= name_num; m++){
-//					##尚未查明的bug，讀取的時候defense和speed的資料會互換
-					pokemonDataSystem(name_list[m], "B.speed", 0, ATK_list[m], space_charstar2,
+				for(int m = 0; m <= name_num; m++)
+					pokemonDataSystem(name_list[m], "B.defense", 0, ATK_list[m], space_charstar2,
 							this_system);
-					severity_level = 1;
-					sprintf(logger_message,"%s %s",name_list[m],ATK_list[m]);
-					getLogger(severity_level, "main", logger_message);
-				}
+
 				for(int m = 0;m <= name_num;m++)sprintf(name_list_temp[m],"%s",name_list[m]);
 
 				for(int m = 0;m <= name_num;m++){
@@ -5550,7 +5566,9 @@ int main(int argc, char *argv[]){
 				sprintf(logger_message,"debug_list");
 				getLogger(severity_level, "main", logger_message);
 				for(int m = 0;m <= name_num;m++){
+					printf("%s ",name_list_temp[m]);
 					printf("%d ",ATK_list_int[m]);
+					if(((m+1) % 4 )== 0)printf("\n");
 					fflush(stdout);
 				}
 				printf("\n");
@@ -5560,15 +5578,147 @@ int main(int argc, char *argv[]){
 				getLogger(severity_level, "main", logger_message);
 
 				for(int m = 0;m < 5;m++){
-					printf("%s(%d)",name_list_temp[m],ATK_list_int[m]);
+					printf("%s(%d) ",name_list_temp[m],ATK_list_int[m]);
 				}
 				printf("\n");
 
+//				排序mana_defense
+//				為避免不可預測的錯誤不分配記憶體重複使用ATK_list
+//				將防禦力資料暫存
+				for(int m = 0; m <= name_num; m++)
+					pokemonDataSystem(name_list[m], "B.mana_defense", 0, ATK_list[m],
+							space_charstar2, this_system);
 
+				for(int m = 0;m <= name_num;m++)sprintf(name_list_temp[m],"%s",name_list[m]);
 
+				for(int m = 0; m <= name_num; m++){
+					char ATK_temp[10];
+					sprintf(ATK_temp, "%s", ATK_list[m]);
+					ATK_list_int[m] = atoi(ATK_temp);
+				}
+				severity_level = 1;
+				sprintf(logger_message, "mana_defense info has been cached");
+				getLogger(severity_level, "main", logger_message);
 
+//				泡沫排序法
+				for(int m = 0; m <= name_num - 1; m++){
+					for(int n = 0; n <= name_num - 1 - m; n++){
+						now_sorted = n + 1;
+						if(ATK_list_int[n] > ATK_list_int[n + 1]){
+							sorted_temp = ATK_list_int[n];
+							ATK_list_int[n] = ATK_list_int[n + 1];
+							ATK_list_int[n + 1] = sorted_temp;
 
+//							將名稱列表快取中的順序也一併對換供後續查詢
+							sprintf(name_temp, "%s", name_list_temp[n]);
+							sprintf(name_list_temp[n], "%s", name_list_temp[n + 1]);
+							sprintf(name_list_temp[n + 1], "%s", name_temp);
 
+						}
+					}
+					severity_level = 1;
+					sprintf(logger_message, "Has been sorted %d times using the bubble sort method",
+							m + 1);
+					getLogger(severity_level, "main", logger_message);
+				}
+
+				severity_level = 1;
+				sprintf(logger_message, "debug_list");
+				getLogger(severity_level, "main", logger_message);
+				for(int m = 0; m <= name_num; m++){
+					printf("%s ",name_list_temp[m]);
+					printf("%d ",ATK_list_int[m]);
+					if(((m+1) % 4 )== 0)printf("\n");
+					fflush(stdout);
+				}
+				printf("\n");
+
+				severity_level = 0;
+				sprintf(logger_message,"依序列出最高SA數值的九隻寶可夢");
+				getLogger(severity_level, "main", logger_message);
+
+//				暫存名稱變數
+				char SA_record[9][64];
+//
+				for(int m = 0;m < 9;m++){
+					int run_record = name_num - m;
+					printf("%s(%d) ",name_list_temp[run_record],ATK_list_int[run_record]);
+					if(((m+1) % 4 )== 0)printf("\n");
+					sprintf(SA_record[m],name_list_temp[run_record]);
+				}
+				printf("\n");
+
+				for(int m = 0;m < 9;m++){
+					char pokemonHP[10];
+					char *pokemonHP_star = pokemonHP;
+					int pokemonHP_int;
+
+//					找出最大和最小HP
+					if(m == 0){
+//						##尚未查明的bug，讀取的時候defense和speed的資料會互換
+						pokemonDataSystem(SA_record[m], "B.speed", 0,pokemonHP_star, space_charstar2, this_system);
+						MaxHP = atoi(pokemonHP);
+						minHP = atoi(pokemonHP);
+						severity_level = 0;
+						sprintf(logger_message,"使用上述最高SA數值的九隻寶可夢來挑選最大最小speed值");
+						getLogger(severity_level, "main", logger_message);
+						severity_level = 1;
+						sprintf(logger_message,"Pokemon %s的speed %d，是初始比較數值",SA_record[m],
+								MaxHP);
+						getLogger(severity_level, "main", logger_message);
+						continue;
+					}
+					pokemonDataSystem(SA_record[m], "B.speed", 0,pokemonHP_star, space_charstar2, this_system);
+					pokemonHP_int = atoi(pokemonHP);
+
+					if(pokemonHP_int > MaxHP){
+						severity_level = 1;
+						sprintf(logger_message,"Pokemon %s的speed %d，比原本最高數值%d還要高，代換Max_speed",SA_record[m],
+								pokemonHP_int,MaxHP);
+						getLogger(severity_level, "main", logger_message);
+
+						MaxHP = pokemonHP_int;
+						pokemonID_recordA = m;
+					}
+					if(pokemonHP_int < minHP){
+						severity_level = 1;
+						sprintf(logger_message,"Pokemon %s的speed %d，比原本最低數值%d還要低，代換min_speed",SA_record[m],
+								pokemonHP_int,minHP);
+						getLogger(severity_level, "main", logger_message);
+
+						minHP = pokemonHP_int;
+						pokemonID_recordB = m;
+					}
+				}
+				severity_level = 0;
+				sprintf(logger_message,"最大speed的Pokemon是%s，他的speed有%d",SA_record[pokemonID_recordA],MaxHP);
+				getLogger(severity_level, "main", logger_message);
+
+				severity_level = 0;
+				sprintf(logger_message,"最小speed的Pokemon是%s，他的speed有%d",SA_record[pokemonID_recordB],minHP);
+				getLogger(severity_level, "main", logger_message);
+
+//				顯示所有Pokemon種類的平均(HP, Def, SA, SD, Spd)
+				int total_total = 0;
+				char total_char[10];
+				char *total_char_star = total_char;
+
+				for(int m = 0; m <= name_num ; m++){
+					pokemonDataSystem(name_list[m], "B.luck", 0,total_char_star, space_charstar2, this_system);
+					severity_level = 1;
+					sprintf(logger_message,"%s's total = %d",name_list[m],atoi(total_char_star));
+					getLogger(severity_level, "main", logger_message);
+
+					severity_level = 1;
+					sprintf(logger_message,"all total = %d + %d",total_total,atoi(total_char_star));
+					getLogger(severity_level, "main", logger_message);
+					total_total += atoi(total_char_star);
+				}
+				total_total /=  name_num + 1;
+
+				severity_level = 0;
+				sprintf(logger_message,"所有Pokemon種類的平均(HP, Def, SA, SD, Spd)為%d",total_total);
+				getLogger(severity_level, "main", logger_message);
 
 
 //				int pokemonID_record[5];

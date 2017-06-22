@@ -22,7 +22,8 @@ attributes_type=Snow Warning
 attributes_type=Snover
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
+
 name=Abra
 base_ability_value=HP 25
 base_ability_value=attack 20
@@ -44,7 +45,8 @@ attributes_type=Synchronize
 attributes_type=None
 //進化目標
 attributes_type=Kadabra
-//---
+//---------------------------------------
+
 name=Absol
 base_ability_value=HP 65
 base_ability_value=attack 130
@@ -66,7 +68,9 @@ attributes_type=Pressure
 attributes_type=None
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
+
+
 name=Chingling
 base_ability_value=HP 45
 base_ability_value=attack 30
@@ -88,7 +92,8 @@ attributes_type=Levitate
 attributes_type=None
 //進化目標
 attributes_type=Chimeco
-//---
+//---------------------------------------
+
 name=Claydol
 base_ability_value=HP 60
 base_ability_value=attack 70
@@ -110,7 +115,8 @@ attributes_type=Levitate
 attributes_type=Baltoy
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
+
 name=Clefable
 base_ability_value=HP 95
 base_ability_value=attack 70
@@ -132,7 +138,8 @@ attributes_type=Cute Charm
 attributes_type=Clefairy
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
+
 name=Clefairy
 base_ability_value=HP 70
 base_ability_value=attack 45
@@ -154,7 +161,9 @@ attributes_type=Cute Charm
 attributes_type=Cleffa
 //進化目標
 attributes_type=Clefable
-//---
+//---------------------------------------
+
+
 name=Elekid
 base_ability_value=HP 45
 base_ability_value=attack 63
@@ -176,7 +185,9 @@ attributes_type=Static
 attributes_type=None
 //進化目標
 attributes_type=Electabuzz
-//---
+//---------------------------------------
+
+
 name=Luxio
 base_ability_value=HP 60
 base_ability_value=attack 85
@@ -198,7 +209,8 @@ attributes_type=Rivalry
 attributes_type=Shinx
 //進化目標
 attributes_type=Luxray
-//---
+//---------------------------------------
+
 name=Marill
 base_ability_value=HP 70
 base_ability_value=attack 20
@@ -220,7 +232,8 @@ attributes_type=Thick Fat
 attributes_type=Azurill
 //進化目標
 attributes_type=Azumarill
-//---
+//---------------------------------------
+
 name=Marowak
 base_ability_value=HP 60
 base_ability_value=attack 80
@@ -242,7 +255,8 @@ attributes_type=Rock Head
 attributes_type=Cubone
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
+
 name=Marshtomp
 base_ability_value=HP 70
 base_ability_value=attack 85
@@ -264,7 +278,8 @@ attributes_type=Torrent
 attributes_type=Mudkip
 //進化目標
 attributes_type=Swampert
-//---
+//---------------------------------------
+
 name=Masquerain
 base_ability_value=HP 70
 base_ability_value=attack 60
@@ -286,7 +301,9 @@ attributes_type=Intimidate
 attributes_type=Surskit
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
+
+
 name=Vaporeon
 base_ability_value=HP 130
 base_ability_value=attack 65
@@ -308,7 +325,8 @@ attributes_type=Water Absorb
 attributes_type=Eevee
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
+
 name=Venomoth
 base_ability_value=HP 70
 base_ability_value=attack 65
@@ -330,4 +348,4 @@ attributes_type=Shield Dust
 attributes_type=Venonat
 //進化目標
 attributes_type=None
-//---
+//---------------------------------------
