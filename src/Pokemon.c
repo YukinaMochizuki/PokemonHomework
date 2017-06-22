@@ -3211,9 +3211,13 @@ char** pokemonDataSystem(char config_item[64],char config_variable[64],int call_
 				if(strcmp("grading_curve_type", config_variable) == 0
 						|| strcmp("attributes_num", config_variable) == 0
 						|| strcmp("racial_skills_table_num", config_variable) == 0
-						|| strcmp("skills_table_num", config_variable) == 0){
+						|| strcmp("skills_table_num", config_variable) == 0
+						|| strcmp("number_of_reading", config_variable) == 0){
 //					int
 //					##int.記得改回來
+//					記得添加所有DataSystem讀取number_of_reading功能
+					if(strcmp("number_of_reading", config_variable) == 0) sprintf(callback_variable,
+							"%d", now_struct_num);
 					if(strcmp("grading_curve_type", config_variable) == 0) sprintf(
 							callback_variable, "%d",
 							Lowlevel_pokemon_data_entity[find_name_num].grading_curve_type);
@@ -5370,7 +5374,7 @@ int main(int argc, char *argv[]){
 				fflush(stdout);
 			}else if(strcmp(input,"C") == 0){
 				int MaxHP,minHP;
-				int pokemonID_recordA,pokemonID_recordB,pokemonID_recordC;
+				int pokemonID_recordA,pokemonID_recordB;
 
 				severity_level = 0;
 				sprintf(logger_message,"找出最大HP和最小HP的Pokemon");
@@ -5381,11 +5385,12 @@ int main(int argc, char *argv[]){
 					char *pokemonHP_star = pokemonHP;
 					int pokemonHP_int;
 
+//					找出最大和最小HP
 					if(m == 0){
 						pokemonDataSystem(name_list[m], "B.HP", 0,pokemonHP_star, space_charstar2, this_system);
 						MaxHP = atoi(pokemonHP);
 						minHP = atoi(pokemonHP);
-						severity_level = 0;
+						severity_level = 1;
 						sprintf(logger_message,"Pokemon %s的HP %d，是初始比較數值",name_list[m],
 								MaxHP);
 						getLogger(severity_level, "main", logger_message);
@@ -5395,7 +5400,7 @@ int main(int argc, char *argv[]){
 					pokemonHP_int = atoi(pokemonHP);
 
 					if(pokemonHP_int > MaxHP){
-						severity_level = 0;
+						severity_level = 1;
 						sprintf(logger_message,"Pokemon %s的HP %d，比原本最高數值%d還要高，代換MaxHP",name_list[m],
 								pokemonHP_int,MaxHP);
 						getLogger(severity_level, "main", logger_message);
@@ -5404,7 +5409,7 @@ int main(int argc, char *argv[]){
 						pokemonID_recordA = m;
 					}
 					if(pokemonHP_int < minHP){
-						severity_level = 0;
+						severity_level = 1;
 						sprintf(logger_message,"Pokemon %s的HP %d，比原本最低數值%d還要低，代換minHP",name_list[m],
 								pokemonHP_int,MaxHP);
 						getLogger(severity_level, "main", logger_message);
@@ -5422,6 +5427,185 @@ int main(int argc, char *argv[]){
 				severity_level = 0;
 				sprintf(logger_message,"最小HP的Pokemon是%s，他的HP有%d",name_list[pokemonID_recordB],minHP);
 				getLogger(severity_level, "main", logger_message);
+
+//				依照攻擊力由高到低分排序，列出前五名
+				int sorted_temp;
+				int now_sorted;
+				int *ATK_list_int;
+				char name_temp[64];
+				char **name_list_temp;
+				char **ATK_list;
+
+
+//				分配記憶體和獲取所有名稱與攻擊力資訊
+				ATK_list = malloc(sizeof(char*) * (name_num + 1));
+				for(int m = 0;m <= name_num;m++)ATK_list[m] = malloc(sizeof(char) * 64);
+				for(int m = 0; m <= name_num; m++)
+					pokemonDataSystem(name_list[m], "B.attack", 0, ATK_list[m], space_charstar2,
+							this_system);
+
+
+				name_list_temp = malloc(sizeof(char*) * (name_num + 1));
+				for(int m = 0;m <= name_num;m++)name_list_temp[m] = malloc(sizeof(char) * 64);
+				for(int m = 0;m <= name_num;m++)sprintf(name_list_temp[m],"%s",name_list[m]);
+
+//				轉換攻擊力資訊字串陣列為int陣列
+				ATK_list_int = (int*)malloc(sizeof(int) * (name_num + 1));
+				for(int m = 0;m <= name_num;m++){
+					char ATK_temp[10];
+					sprintf(ATK_temp,"%s",ATK_list[m]);
+					ATK_list_int[m] = atoi(ATK_temp);
+				}
+				severity_level = 1;
+				sprintf(logger_message,"ATK info has been cached");
+				getLogger(severity_level, "main", logger_message);
+
+//				泡沫演算法
+				for(int m = 0;m <= name_num - 1;m++){
+					for(int n = 0;n <= name_num - 1 - m;n++){
+						now_sorted = n + 1;
+						if(ATK_list_int[n] > ATK_list_int[n + 1]){
+							sorted_temp = ATK_list_int[n];
+							ATK_list_int[n] = ATK_list_int[n + 1];
+							ATK_list_int[n + 1] = sorted_temp;
+
+//							將名稱列表快取中的順序也一併對換供後續查詢
+							sprintf(name_temp,"%s",name_list_temp[n]);
+							sprintf(name_list_temp[n],"%s",name_list_temp[n + 1]);
+							sprintf(name_list_temp[n + 1],"%s",name_temp);
+
+						}
+					}
+					severity_level = 1;
+					sprintf(logger_message,
+							"Has been sorted %d times using the bubble sort method", m + 1);
+					getLogger(severity_level, "main", logger_message);
+				}
+
+				severity_level = 1;
+				sprintf(logger_message,"debug_list");
+				getLogger(severity_level, "main", logger_message);
+				for(int m = 0;m <= name_num;m++){
+					printf("%d ",ATK_list_int[m]);
+					fflush(stdout);
+				}
+				printf("\n");
+
+				severity_level = 0;
+				sprintf(logger_message,"依序列出前五名ATK數值的寶可夢");
+				getLogger(severity_level, "main", logger_message);
+
+				for(int m = 0;m < 5;m++){
+					int run_record = name_num - m;
+					printf("%s(%d)",name_list_temp[run_record],ATK_list_int[run_record]);
+				}
+				printf("\n");
+
+
+//				排序防禦力的最後五名
+//				為避免不可預測的錯誤不分配記憶體重複使用ATK_list
+//				將防禦力資料暫存
+				for(int m = 0; m <= name_num; m++){
+//					##尚未查明的bug，讀取的時候defense和speed的資料會互換
+					pokemonDataSystem(name_list[m], "B.speed", 0, ATK_list[m], space_charstar2,
+							this_system);
+					severity_level = 1;
+					sprintf(logger_message,"%s %s",name_list[m],ATK_list[m]);
+					getLogger(severity_level, "main", logger_message);
+				}
+				for(int m = 0;m <= name_num;m++)sprintf(name_list_temp[m],"%s",name_list[m]);
+
+				for(int m = 0;m <= name_num;m++){
+					char ATK_temp[10];
+					sprintf(ATK_temp,"%s",ATK_list[m]);
+					ATK_list_int[m] = atoi(ATK_temp);
+				}
+				severity_level = 1;
+				sprintf(logger_message,"DEF info has been cached");
+				getLogger(severity_level, "main", logger_message);
+
+//				泡沫排序法
+				for(int m = 0; m <= name_num - 1; m++){
+					for(int n = 0; n <= name_num - 1 - m; n++){
+						now_sorted = n + 1;
+						if(ATK_list_int[n] > ATK_list_int[n + 1]){
+							sorted_temp = ATK_list_int[n];
+							ATK_list_int[n] = ATK_list_int[n + 1];
+							ATK_list_int[n + 1] = sorted_temp;
+
+//							將名稱列表快取中的順序也一併對換供後續查詢
+							sprintf(name_temp, "%s", name_list_temp[n]);
+							sprintf(name_list_temp[n], "%s", name_list_temp[n + 1]);
+							sprintf(name_list_temp[n + 1], "%s", name_temp);
+
+						}
+					}
+					severity_level = 1;
+					sprintf(logger_message,
+							"Has been sorted %d times using the bubble sort method", m + 1);
+					getLogger(severity_level, "main", logger_message);
+				}
+
+				severity_level = 1;
+				sprintf(logger_message,"debug_list");
+				getLogger(severity_level, "main", logger_message);
+				for(int m = 0;m <= name_num;m++){
+					printf("%d ",ATK_list_int[m]);
+					fflush(stdout);
+				}
+				printf("\n");
+
+				severity_level = 0;
+				sprintf(logger_message,"依序列出後五名DEF數值的寶可夢");
+				getLogger(severity_level, "main", logger_message);
+
+				for(int m = 0;m < 5;m++){
+					printf("%s(%d)",name_list_temp[m],ATK_list_int[m]);
+				}
+				printf("\n");
+
+
+
+
+
+
+
+
+//				int pokemonID_record[5];
+//				int ATK_sorting[5];
+//				int name_Recorded[];
+//				int now_array = 0;
+//				int MaxATK;
+//
+//				for(int m = 0;m < 5;m++){
+//					for(int n = 0;n <= name_num;n++){
+//						char pokemonATK[10];
+//						char *pokemonATK_star = pokemonATK;
+//						int pokemonATK_int;
+//
+//						if(n == 0){
+//							pokemonDataSystem(name_list[n], "B.attack", 0,pokemonATK_star, space_charstar2, this_system);
+//							pokemonATK_int = atoi(pokemonATK);
+//							pokemonID_record[0] = n;
+//							ATK_sorting[0] = pokemonATK_int;
+//
+//							now_array++;
+//							continue;
+//						}
+//
+//						pokemonDataSystem(name_list[n], "B.attack", 0,pokemonATK_star, space_charstar2, this_system);
+//						pokemonATK_int = atoi(pokemonATK);
+//						if(ATK_sorting[now_array]){
+//
+//						}
+//
+//
+//
+//
+//					}
+//				}
+
+
 
 
 			}

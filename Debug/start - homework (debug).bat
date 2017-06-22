@@ -1,3 +1,3 @@
 @ECHO OFF
-Pokemon.exe homework debug
+Pokemon.exe final_homework debug
 PAUSE
