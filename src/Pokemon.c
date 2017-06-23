@@ -185,7 +185,7 @@ void getTime(char *time_return){
 	sec = total_seconds % 60;
 	min = (total_seconds / 60) % 60;
 	hour = (total_seconds / 3600) % 24;
-	sprintf(time_return, "[%02d:%02d:%02d]", hour, min, sec);
+	sprintf(time_return, "%02d:%02d:%02d", hour, min, sec);
 //    %2d兩格不補零，%02d兩格補零
 //    stdio.h的格式化函數，與printf使用方法相同，唯獨第一個引數為輸出結果
 //    return time_return;
@@ -218,7 +218,7 @@ void getLogger(int massage_type,char source_system[60],char message[80]){
 	char get_time[15];
 	char *now_time = get_time;
 	getTime(now_time);
-	printf("%s [%s] [%s]: %s\n", now_time, severity_level, source_system, message);
+	printf("[%s] [%s] [%s]: %s\n", now_time, severity_level, source_system, message);
 	fflush(stdout);
 }
 
@@ -5754,15 +5754,230 @@ int main(int argc, char *argv[]){
 //
 //					}
 //				}
+			}else if(strcmp(input,"D") == 0){
+				char in_temp[10];
+				int rand_my_pokemon;
+				int rand_my_pokemon_ability;
+				int mt_pokemon_num = 0;
+
+				int rand_my_pokemon_array[50];
+				char rand_my_pokemon_char_array[50][64];
+
+				char call_data_system_record[64];
+				char *call_data_system_record_star = call_data_system_record;
+
+				struct Lowlevel_pokemon_data My_pokemon[50];
+
+				if(B_record != 1){
+					sprintf(logger_message, "您必須先選B選項才能繼續");
+					getLogger(severity_level, "main", logger_message);
+					continue;
+				}
+
+				if(D_record){
+					severity_level = 2;
+					sprintf(logger_message,"D選項已經被執行過了!");
+					getLogger(severity_level, "main", logger_message);
+					continue;
+				}
+
+				D_record = 1;
+
+				while (1) {
+					severity_level = 0;
+					sprintf(logger_message, "請輸入你想擁有的寶可夢數量(必須小於五)");
+					getLogger(severity_level, "main", logger_message);
+					scanf("%d", &mt_pokemon_num);
+
+					if(mt_pokemon_num <= 5 && mt_pokemon_num > 0)break;
+
+					severity_level = 0;
+					sprintf(logger_message, "請輸入正確的數字");
+					getLogger(severity_level, "main", logger_message);
+				}
+
+				mt_pokemon_num *= 10;
+//				產生寶可夢亂數
+				severity_level = 0;
+				sprintf(logger_message, "請問你要及時顯示擁有的寶可夢嗎(Y/n)");
+				getLogger(severity_level, "main", logger_message);
+				scanf("%s",in_temp);
+				for(int m = 0;m <= mt_pokemon_num;m++){
+					int positive_and_negative;
+					int num_record;
+
+					rand_my_pokemon_array[m] = rand() % name_num + 1;
+					sprintf(rand_my_pokemon_char_array[m],"%s",name_list[rand_my_pokemon_array[m]]);
+					sprintf(My_pokemon[m].name,"%s",name_list[rand_my_pokemon_array[m]]);
+
+//					HP
+					rand_my_pokemon_ability = rand() % 21;
+					positive_and_negative = rand() % 2;
+					pokemonDataSystem(My_pokemon[m].name, "B.HP", 0,
+							call_data_system_record_star, space_charstar2,
+							this_system);
+					num_record = atoi(call_data_system_record_star);
+
+					if(positive_and_negative == 0)rand_my_pokemon_ability = ~rand_my_pokemon_ability + 1;
+					num_record += rand_my_pokemon_ability;
+					if(num_record < 0)abs(num_record);
+					My_pokemon[m].base_ability_value.HP = num_record;
+
+
+//					attack
+					rand_my_pokemon_ability = rand() % 21;
+					positive_and_negative = rand() % 2;
+					pokemonDataSystem(My_pokemon[m].name, "B.attack", 0,
+							call_data_system_record_star, space_charstar2,
+							this_system);
+					num_record = atoi(call_data_system_record_star);
+
+					if(positive_and_negative == 0)rand_my_pokemon_ability = ~rand_my_pokemon_ability + 1;
+					num_record += rand_my_pokemon_ability;
+					if(num_record < 0)abs(num_record);
+					My_pokemon[m].base_ability_value.attack = num_record;
+
+
+//					defense
+					rand_my_pokemon_ability = rand() % 21;
+					positive_and_negative = rand() % 2;
+					pokemonDataSystem(My_pokemon[m].name, "B.defense", 0,
+							call_data_system_record_star, space_charstar2,
+							this_system);
+					num_record = atoi(call_data_system_record_star);
+
+					if(positive_and_negative == 0)rand_my_pokemon_ability = ~rand_my_pokemon_ability + 1;
+					num_record += rand_my_pokemon_ability;
+					if(num_record < 0)abs(num_record);
+					My_pokemon[m].base_ability_value.defense = num_record;
+
+
+//					mana_attack
+					rand_my_pokemon_ability = rand() % 21;
+					positive_and_negative = rand() % 2;
+					pokemonDataSystem(My_pokemon[m].name, "B.mana_attack", 0,
+							call_data_system_record_star, space_charstar2,
+							this_system);
+					num_record = atoi(call_data_system_record_star);
+
+					if(positive_and_negative == 0)rand_my_pokemon_ability = ~rand_my_pokemon_ability + 1;
+					num_record += rand_my_pokemon_ability;
+					if(num_record < 0)abs(num_record);
+					My_pokemon[m].base_ability_value.mana_attack = num_record;
+
+
+//					mana_defense
+					rand_my_pokemon_ability = rand() % 21;
+					positive_and_negative = rand() % 2;
+					pokemonDataSystem(My_pokemon[m].name, "B.mana_defense", 0,
+							call_data_system_record_star, space_charstar2,
+							this_system);
+					num_record = atoi(call_data_system_record_star);
+
+					if(positive_and_negative == 0)rand_my_pokemon_ability = ~rand_my_pokemon_ability + 1;
+					num_record += rand_my_pokemon_ability;
+					if(num_record < 0)abs(num_record);
+					My_pokemon[m].base_ability_value.mana_defense = num_record;
+
+
+//					speed
+					rand_my_pokemon_ability = rand() % 21;
+					positive_and_negative = rand() % 2;
+					pokemonDataSystem(My_pokemon[m].name, "B.speed", 0,
+							call_data_system_record_star, space_charstar2,
+							this_system);
+					num_record = atoi(call_data_system_record_star);
+
+					if(positive_and_negative == 0)rand_my_pokemon_ability = ~rand_my_pokemon_ability + 1;
+					num_record += rand_my_pokemon_ability;
+					if(num_record < 0)abs(num_record);
+					My_pokemon[m].base_ability_value.speed = num_record;
+
+					if(strcmp(in_temp,"Y") == 0){
+						printf("%s ",rand_my_pokemon_char_array[m]);
+						if(m % 5 == 0 && m != 0)printf("\n");
+					}
+				}
+				severity_level = 0;
+				sprintf(logger_message, "你獲得了%s等%d隻的寶可夢",rand_my_pokemon_char_array[0],mt_pokemon_num);
+				getLogger(severity_level, "main", logger_message);
+
+				int A_record_2 = 0;
+				int B_record_2 = 0;
+				int C_record_2 = 0;
+				int D_record_2 = 0;
+				for(;1;){
+//			清空標準輸入
+					fflush(stdin);
+
+					severity_level = 0;
+					sprintf(logger_message, "請輸入選項: ");
+					getLogger(severity_level, "main", logger_message);
+					sprintf(logger_message, "(A). 將個人資料, 和N*10個怪獸資料，儲存至檔案");
+					getLogger(severity_level, "main", logger_message);
+					sprintf(logger_message, "(B). 顯示N*10隻是否可以進化。列出可進化的Monsters, 並進化");
+					getLogger(severity_level, "main", logger_message);
+					sprintf(logger_message, "(C). 將進化怪獸, 儲存至檔案。但檔案中需去除被進化的怪獸");
+					getLogger(severity_level, "main", logger_message);
+					sprintf(logger_message, "(D). 若有進化怪獸, 列出進化怪獸的能力(Ability)和能力描述");
+					getLogger(severity_level, "main", logger_message);
+					sprintf(logger_message, "(E). 回主選單");
+					getLogger(severity_level, "main", logger_message);
+
+					char input[64];
+					gets(input);
+					if(strcmp(input,"A") == 0){
+						FILE *pFile;
+						char file_name[64];
+						char get_time[15];
+						char *now_time = get_time;
+
+						if(A_record_2){
+							severity_level = 2;
+							sprintf(logger_message,"A選項已經被執行過了!");
+							getLogger(severity_level, "main", logger_message);
+							continue;
+						}
+
+						A_record_2 = 1;
+
+						sprintf(file_name,"MyPokemon_Monster_%d.txt",person_finalhomework.studentID);
+						pFile = fopen(file_name,"w");
+
+						getTime(now_time);
+						fprintf(pFile,"-----由%s時刻新建寫入資料-----\n",now_time);
+
+//						寫入個人資料
+						fprintf(pFile,"個人資料：\n");
+						fprintf(pFile,"班級：%s\n",person_finalhomework.class);
+						fprintf(pFile,"姓名：%s\n",person_finalhomework.name);
+						fprintf(pFile,"學號：%d\n",person_finalhomework.studentID);
+						fprintf(pFile,"電話：%s\n",person_finalhomework.phone_number);
+						fprintf(pFile,"生日：%s\n",person_finalhomework.date);
+
+//						寫入寶可夢資料
+						for(int m = 0;m <= mt_pokemon_num;m++){
+							fprintf(pFile,"-------------\n");
+							fprintf(pFile,"Pokemon name :%s\n",My_pokemon[m].name);
+							fprintf(pFile,"Pokemon HP :%d\n",My_pokemon[m].base_ability_value.HP);
+							fprintf(pFile,"Pokemon attack :%d\n",My_pokemon[m].base_ability_value.attack);
+							fprintf(pFile,"Pokemon defense :%d\n",My_pokemon[m].base_ability_value.defense);
+							fprintf(pFile,"Pokemon SA :%d\n",My_pokemon[m].base_ability_value.mana_attack);
+							fprintf(pFile,"Pokemon SD :%d\n",My_pokemon[m].base_ability_value.mana_defense);
+							fprintf(pFile,"Pokemon speed :%d\n",My_pokemon[m].base_ability_value.speed);
+						}
+
+
+					}else if(strcmp(input,"B") == 0){
 
 
 
 
+					}
+
+				}
 			}
 		}
-
-
-
 	}
 
 	areaDataSystem("", "", space_int, "", space_charstar2,this_system);
